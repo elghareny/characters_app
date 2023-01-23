@@ -7,7 +7,7 @@ class CharactersRepository
 
   CharactersRepository(this.charactersWebServeces);
 
-  Future<List<dynamic>> getAllCharacters()async
+  Future<List<CharactersModel>> getAllCharacters()async
   {
     final characters = await charactersWebServeces.getAllCharacters();
     return characters.map((character) => CharactersModel.fromJson(character)).toList();
